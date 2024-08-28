@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moi le Site je sais tout</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(45deg, #FFA726, #FFEB3B);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-bottom: 4px solid red;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background: linear-gradient(45deg, #FFA726, #FFEB3B);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-bottom: 4px solid red;
+        }
+
+        nav a {
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 0.9em;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #FFCA28;
+            transform: scale(1.1);
+        }
+
+        section {
+            padding: 40px 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 2px solid red;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        section:hover {
+            transform: scale(1.05);
+        }
+
+        h2 {
+            font-size: 2em;
+            color: #FFA726;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .section-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .section-content a {
+            display: block;
+            width: 100%;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            position: relative;
+            width: 100%;
+            margin-top: 40px;
+            font-size: 0.9em;
+            border-top: 4px solid red;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Moi le Site je sais tout</h1>
+        <p>Bienvenue sur mon site personnel où je partage tout ce que je sais !</p>
+    </header>
+
+    <nav>
+        <a href="jeux-videos.html">Jeux Vidéo</a>
+        <a href="projets-scolaires.html">Projets Scolaires</a>
+        <a href="resumes-livres.html">Résumés de Livres</a>
+        <a href="voyages.html">Voyages</a>
+    </nav>
+
+    <section class="section-content">
+        <a href="jeux-videos.html">
+            <h2>Jeux Vidéo</h2>
+            <p>Plongez dans l'univers des jeux vidéo, des critiques, des guides et plus encore.</p>
+        </a>
+    </section>
+
+    <section class="section-content">
+        <a href="projets-scolaires.html">
+            <h2>Projets Scolaires</h2>
+            <p>Explorez mes projets scolaires, mes recherches et mes présentations.</p>
+        </a>
+    </section>
+
+    <section class="section-content">
+        <a href="resumes-livres.html">
+            <h2>Résumés de Livres</h2>
+            <p>Découvrez les résumés des livres que j'ai lus récemment et mes avis personnels.</p>
+        </a>
+    </section>
+
+    <section class="section-content">
+        <a href="voyages.html">
+            <h2>Voyages</h2>
+            <p>Suivez mes aventures autour du monde et découvrez mes destinations préférées.</p>
+        </a>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Moi le Site je sais tout - Tous droits réservés</p>
+    </footer>
+</body>
+
+</html>
