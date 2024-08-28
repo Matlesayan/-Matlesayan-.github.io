@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Personnelle - Mes Projets</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0e0b16;
+            color: #e7dfdd;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(45deg, #2b2d42, #8d99ae);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            border-bottom: 4px solid #d90429;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        header h1 {
+            font-size: 2.8em;
+            margin: 0;
+            text-shadow: 0 0 15px #d90429, 0 0 25px #d90429;
+            animation: textGlow 2s ease-in-out infinite alternate;
+        }
+
+        header p {
+            font-size: 1.3em;
+            margin-top: 10px;
+            text-shadow: 0 0 10px #ef233c;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background: linear-gradient(45deg, #2b2d42, #8d99ae);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            border-bottom: 4px solid #d90429;
+            animation: slideInLeft 1s ease-out;
+        }
+
+        nav a {
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 0.9em;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #d90429;
+            transform: scale(1.1);
+            text-shadow: 0 0 10px #ffffff;
+        }
+
+        section {
+            padding: 40px 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            background-color: #2b2d42;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            border: 2px solid #d90429;
+            position: relative;
+            animation: fadeInUp 1s ease-out;
+            overflow: hidden;
+        }
+
+        section:before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            left: -100px;
+            width: 300px;
+            height: 300px;
+            background: rgba(223, 32, 32, 0.2);
+            border-radius: 50%;
+            z-index: 0;
+            animation: floating 6s ease-in-out infinite;
+            filter: blur(30px);
+        }
+
+        h2 {
+            color: #ef233c;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            text-align: center;
+            z-index: 1;
+            position: relative;
+            text-shadow: 0 0 10px #ef233c;
+            animation: rotateIn 1s ease-out;
+        }
+
+        .book-summary, .game-list-item, .travel-destination {
+            margin-bottom: 20px;
+            z-index: 1;
+            position: relative;
+            animation: zoomIn 1s ease-out;
+        }
+
+        .book-summary h3, .game-list-item h3, .travel-destination h3 {
+            margin-bottom: 10px;
+            color: #d90429;
+            font-size: 1.6em;
+            text-shadow: 0 0 10px #d90429;
+            animation: textGlow 2s ease-in-out infinite alternate;
+        }
+
+        .book-summary p, .game-list-item p, .travel-destination p {
+            margin-top: 0;
+            color: #8d99ae;
+            font-size: 1.1em;
+        }
+
+        .game-list, .travel-destination-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        .game-list-item, .travel-destination {
+            background-color: #0e0b16;
+            border: 2px solid #d90429;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 10px;
+            animation: slideInUp 1s ease-out;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .game-list-item:hover, .travel-destination:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+        }
+
+        footer {
+            background-color: #2b2d42;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            position: relative;
+            width: 100%;
+            margin-top: 40px;
+            font-size: 0.9em;
+            border-top: 4px solid #d90429;
+            animation: slideInRight 1s ease-out;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes rotateIn {
+            from {
+                opacity: 0;
+                transform: rotate(-360deg);
+            }
+            to {
+                opacity: 1;
+                transform: rotate(0deg);
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes textGlow {
+            from {
+                text-shadow: 0 0 10px rgba(223, 32, 32, 0.5), 0 0 20px rgba(223, 32, 32, 0.4), 0 0 30px rgba(223, 32, 32, 0.3);
+            }
+            to {
+                text-shadow: 0 0 20px rgba(223, 32, 32, 0.7), 0 0 30px rgba(223, 32, 32, 0.6), 0 0 40px rgba(223, 32, 32, 0.5);
+            }
+        }
+
+        @keyframes floating {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeux Vid�o - Moi le Site je sais tout</title>
+    <!-- Style similaire � celui de la page principale -->
+</head>
+
+<body>
+    <header>
+        <h1>Jeux Vid�o</h1>
+    </header>
+
+    <section>
+        <h2>Les 10 jeux vid�o les plus connus</h2>
+        <!-- Contenu similaire � celui de la section Jeux Vid�o sur la page principale -->
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Moi le Site je sais tout - Tous droits r�serv�s</p>
+    </footer>
+</body>
+
+</html>
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Bienvenue sur ma Page Personnelle</h1>
+        <p>Explore mes projets et découvertes</p>
+    </header>
+
+    <nav>
+        <a href="#jeux-videos">Jeux Vidéo</a>
+        <a href="#projets-scolaires">Projets Scolaires</a>
+        <a href="#resumes-livres">Résumés de Livres</a>
+        <a href="#voyages">Voyages</a>
+    </nav>
+
+    <section id="jeux-videos">
+        <h2>Jeux Vidéo</h2>
+        <p>Découvrez les jeux vidéo les plus connus qui ont marqué l'industrie du jeu.</p>
+        <ul class="game-list">
+            <li class="game-list-item">
+                <h3>The Legend of Zelda: Breath of the Wild</h3>
+                <p>Un jeu d'action-aventure en monde ouvert développé et publié par Nintendo. Il est salué pour son gameplay innovant et son univers vaste et immersif.</p>
+            </li>
+            <li class="game-list-item">
+                <h3>The Witcher 3: Wild Hunt</h3>
+                <p>Un jeu de rôle en monde ouvert développé par CD Projekt. Il est acclamé pour sa narration, ses personnages profonds et son vaste monde riche en détails.</p>
+            </li>
+            <li class="game-list-item">
+                <h3>Red Dead Redemption 2</h3>
+                <p>Un jeu d'action-aventure en monde ouvert développé par Rockstar Games. Connu pour son réalisme, son histoire captivante, et son monde ouvert détaillé.</p>
+            </li>
+        </ul>
+    </section>
+
+    <section id="projets-scolaires">
+        <h2>Projets Scolaires</h2>
+        <p>Mes réalisations académiques et projets notables durant mes études.</p>
+        <ul class="game-list">
+            <li class="game-list-item">
+                <h3>Application de Gestion de Bibliothèque</h3>
+                <p>Un projet de développement d'une application de gestion de bibliothèque pour le suivi des emprunts de livres, avec une interface utilisateur intuitive et une base de données robuste.</p>
+            </li>
+            <li class="game-list-item">
+                <h3>Analyse des Réseaux Sociaux</h3>
+                <p>Un projet d'analyse de données axé sur les tendances des réseaux sociaux, utilisant des outils d'apprentissage automatique pour identifier les schémas et prédire les mouvements du marché.</p>
+            </li>
+        </ul>
+    </section>
+
+    <section id="resumes-livres">
+        <h2>Résumés de Livres</h2>
+        <p>Voici quelques résumés des livres que j'ai lus récemment, avec mes réflexions personnelles.</p>
+        <div class="book-summary">
+            <h3>Sapiens: Une brève histoire de l'humanité - Yuval Noah Harari</h3>
+            <p>Ce livre explore l'évolution de l'humanité, des premiers Homo sapiens à la révolution cognitive, agricole, et scientifique. Harari questionne également l'avenir de l'espèce humaine.</p>
+        </div>
+        <div class="book-summary">
+            <h3>Les Misérables - Victor Hugo</h3>
+            <p>Un classique de la littérature française, ce roman explore la justice, la misère, et la rédemption à travers l'histoire de Jean Valjean, un ancien forçat en quête de rédemption.</p>
+        </div>
+    </section>
+
+    <section id="voyages">
+        <h2>Voyages</h2>
+        <p>Découvrez mes aventures autour du monde, des paysages à couper le souffle aux cultures fascinantes.</p>
+        <ul class="travel-destination-list">
+            <li class="travel-destination">
+                <h3>Japon - Tokyo</h3>
+                <p>Un voyage inoubliable à Tokyo, mêlant tradition et modernité. De l'agitation de Shibuya à la sérénité des temples, Tokyo est une ville de contrastes fascinants.</p>
+            </li>
+            <li class="travel-destination">
+                <h3>Islande - Reykjavik</h3>
+                <p>Une aventure au cœur des paysages volcaniques et glacés de l'Islande. Reykjavik offre une vue imprenable sur les aurores boréales et des sources chaudes relaxantes.</p>
+            </li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 MonSitePerso.com | Tous droits réservés</p>
+    </footer>
+</body>
+
+</html>
